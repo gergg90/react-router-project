@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import About from "./components/About";
-import { useNavigation } from "./hooks/useNavigation";
+import { EVENTS } from "./consts";
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
-  const { NAVIGATION_EVENT } = useNavigation();
 
   useEffect(() => {
     const onLocationChange = () => {
       setCurrentPath(window.location.pathname);
     };
 
-    window.addEventListener(NAVIGATION_EVENT, onLocationChange);
+    window.addEventListener(EVENTS.PUSHSTATE, onLocationChange);
+    window.addEventListener(EVENTS.POPSTATE, onLocationChange);
 
     return () => {
-      window.removeEventListener(NAVIGATION_EVENT, onLocationChange);
+      window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange);
+      window.removeEventListener(EVENTS.POPSTATE, onLocationChange);
     };
   }, []);
 

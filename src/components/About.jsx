@@ -1,12 +1,10 @@
-import { useNavigation } from "../hooks/useNavigation";
+import Link from "../Link";
 
 function About() {
-  const { navigate } = useNavigation();
-
   return (
     <>
       <h1>About</h1>
-      <button onClick={() => navigate("/")}>Home</button>
+      <Link to="/">Home</Link>
 
       <img
         src="https://storage.googleapis.com/pod_public/1300/177057.jpg"

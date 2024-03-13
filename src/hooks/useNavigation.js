@@ -1,11 +1,11 @@
-export const useNavigation = () => {
-  const NAVIGATION_EVENT = "pushstate";
+import { EVENTS } from "../consts";
 
+export const useNavigation = () => {
   const navigate = (href) => {
     window.history.pushState({}, "", href);
-    const navigationEvent = new Event(NAVIGATION_EVENT);
+    const navigationEvent = new Event(EVENTS.PUSHSTATE);
     window.dispatchEvent(navigationEvent);
   };
 
-  return { navigate, NAVIGATION_EVENT };
+  return { navigate };
 };
