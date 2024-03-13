@@ -1,4 +1,10 @@
-body{
+body {
   background-color: #202020;
   color: bisque;
 }
+/* 
+display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden; */
