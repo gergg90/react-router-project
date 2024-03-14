@@ -1,8 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EVENTS } from "../consts";
 
-function Router({ routes = [], defaultComponent: DefaultComponent = null }) {
+function Router({ routes = [], defaultComponent: DefaultComponent }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -19,7 +18,9 @@ function Router({ routes = [], defaultComponent: DefaultComponent = null }) {
     };
   }, []);
 
-  return <div>Router</div>;
+  const Page = routes.find(({ path }) => path === currentPath)?.component;
+
+  return Page ? <Page /> : <DefaultComponent />;
 }
 
 export default Router;
