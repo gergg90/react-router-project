@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import HomePage from "./components/HomePage";
-import About from "./components/About";
-import { EVENTS } from "./consts";
+import { useEffect } from "react";
+import { useState } from "react";
+import { EVENTS } from "../consts";
 
-const routes = [
-  {
-    path: "/",
-    component: HomePage,
-  },
-  {
-    path: "/about",
-    component: About,
-  },
-];
-
-function App() {
+function Router({ routes = [], defaultComponent: DefaultComponent = null }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -32,14 +19,7 @@ function App() {
     };
   }, []);
 
-  return (
-    <>
-      <main>
-        {currentPath === "/" && <HomePage />}
-        {currentPath === "/about" && <About />}
-      </main>
-    </>
-  );
+  return <div>Router</div>;
 }
 
-export default App;
+export default Router;
