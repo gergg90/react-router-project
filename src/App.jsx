@@ -4,6 +4,7 @@ import About from "./components/About";
 import Router from "./components/Router";
 import Products from "./components/Products";
 import Page404 from "./components/Page404";
+import SearchQuery from "./components/SearchQuery";
 
 const routes = [
   {
@@ -20,9 +21,7 @@ const routes = [
   },
   {
     path: "/search/:query",
-    component: () => {
-      return <p>Search Query</p>;
-    },
+    component: SearchQuery,
   },
 ];
 
