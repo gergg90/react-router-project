@@ -18,6 +18,12 @@ const routes = [
     path: "/products",
     component: Products,
   },
+  {
+    path: "/search/:query",
+    component: () => {
+      return <p>Search Query</p>;
+    },
+  },
 ];
 
 function App() {
