@@ -1,5 +1,3 @@
-function Route({ path, component }) {
+export function Route({ path, component }) {
   return null;
 }
-
-export default Route;

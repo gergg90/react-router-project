@@ -1,4 +1,4 @@
-import { EVENTS } from "../consts";
+import { EVENTS } from "../consts.js";
 
 export const useNavigation = () => {
   const navigate = (href) => {

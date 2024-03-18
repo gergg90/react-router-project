@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 
-function SearchQuery({ routeParams }) {
+function ProductsQuery({ routeParams }) {
   useEffect(() => {
     document.title = routeParams.query;
   }, []);
 
   return (
     <>
-      <h1>Search Query {routeParams.query}</h1>
+      <h1>Products Number Query: {routeParams.query}</h1>
     </>
   );
 }
 
-export default SearchQuery;
+export default ProductsQuery;

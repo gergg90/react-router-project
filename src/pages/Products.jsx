@@ -1,6 +1,6 @@
-import Link from "../Link";
+import Link from "../Link.jsx";
 
-function Products() {
+export function Products() {
   return (
     <>
       <h1>Products</h1>

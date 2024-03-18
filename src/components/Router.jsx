@@ -1,8 +1,8 @@
 import { useEffect, useState, Children } from "react";
-import { EVENTS } from "../consts";
+import { EVENTS } from "../consts.js";
 import { match } from "path-to-regexp";
 
-function Router({ children, routes = [], defaultComponent: DefaultComponent }) {
+export function Router({ children, routes = [], defaultComponent: DefaultComponent }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -48,4 +48,3 @@ function Router({ children, routes = [], defaultComponent: DefaultComponent }) {
   );
 }
 
-export default Router;
