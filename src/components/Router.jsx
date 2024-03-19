@@ -2,7 +2,11 @@ import { useEffect, useState, Children } from "react";
 import { EVENTS } from "../consts.js";
 import { match } from "path-to-regexp";
 
-export function Router({ children, routes = [], defaultComponent: DefaultComponent }) {
+export function Router({
+  children,
+  routes = [],
+  defaultComponent: DefaultComponent,
+}) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -26,9 +30,9 @@ export function Router({ children, routes = [], defaultComponent: DefaultCompone
     const isRoute = name === "Route";
 
     return isRoute ? props : null;
-  }).filter(Boolean);
+  });
 
-  const routeToUse = routes.concat(routesFromChildren);
+  const routeToUse = routes.concat(routesFromChildren).filter(Boolean);
 
   const Page = routeToUse.find(({ path }) => {
     if (path === currentPath) return true;
@@ -47,4 +51,3 @@ export function Router({ children, routes = [], defaultComponent: DefaultCompone
     <DefaultComponent routeParams={routeParams} />
   );
 }
-

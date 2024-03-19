@@ -17,6 +17,7 @@ function App() {
         <Router defaultComponent={Lazy404Page}>
           <Route path="/" component={LazyHomePage} />
           <Route path="/about" component={LazyAboutPage} />
+          <Route path="/:lang/about" component={LazyAboutPage} />
           <Route path="/products" component={LazyProductsPage} />
           <Route path="/products/:query" component={LazySearchQueryPage} />
         </Router>
